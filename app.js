@@ -1,69 +1,34 @@
 function pesquisar() {
+  const section = document.getElementById("resultados-pesquisa");
+  const campoPesquisa = document.getElementById("campo-pesquisa").value.toLowerCase();
 
+  if (!campoPesquisa) {
+    section.innerHTML = '<p class="nao-encontrado">Por favor, insira um termo de pesquisa.</p>';
+    return;
+  }
 
-  let section = document.getElementById
-    ("resultados-pesquisa")
-  console.log(section);
+  const resultados = dados.filter(dado => {
+    const tituloLower = dado.titulo.toLowerCase();
+    const descriçãoLower = dado.descrição.toLowerCase();
+    const tagsLower = dado.tags.toLowerCase();
+    const regex = new RegExp(campoPesquisa, "gi"); // Busca global e insensível a caixa
+    return tituloLower.match(regex) || descriçãoLower.match(regex) || tagsLower.match(regex);
+  });
 
-  let campoPesquisa = document.getElementById("campo-pesquisa").value
-
-
-      if(campoPesquisa == ""){
-
-        section.innerHTML = `<p class="nao-encontrado">Não foi encontrado</p>`;
-        return
-
-      }
-
-      campoPesquisa = campoPesquisa.toLowerCase()
-
-
-  let resultados = "";
-  let titulo = "";
-  let descrição = "";
-  let tags = "";
-
-
-  for (let dado of dados) {
-
-    
-    titulo = dado.titulo.toLowerCase()
-    descrição = dado.descrição.toLowerCase()
-    tags = dado.tags.toLowerCase()
-
-      if (titulo.includes(campoPesquisa) || descrição.includes(campoPesquisa) || tags.includes(campoPesquisa)
-
-    ){
-
-
-        resultados += `
-    
+  if (resultados.length === 0) {
+    section.innerHTML = '<p class="nao-encontrado">Nenhum resultado encontrado.</p>';
+  } else {
+    let html = '';
+    resultados.forEach(dado => {
+      html += `
         <div class="item-resultado">
           <h2>
-            <a href="#" target="_blank">${dado.titulo}</a>
+            <a href="${dado.link}" target="_blank">${dado.titulo.replace(new RegExp(campoPesquisa, "gi"), match => `<strong>${match}</strong>`)}</a>
           </h2>
-          <p class="descrição-meta">${dado.descrição}</p>
-          <a href=${dado.link} target="_blank">Escute Aqui</a>
-          <a 
+          <p>${dado.descrição}</p>
         </div>
-        
-        `
-      }
-
-
-   
+      `;
+    });
+    section.innerHTML = html;
   }
-
-  if(!resultados){
-
-    resultados = "Não foi encontrado"
-  }
-
-
-  section.innerHTML = resultados
-
-
 }
-
-
-
