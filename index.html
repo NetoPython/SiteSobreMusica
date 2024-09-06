@@ -10,11 +10,11 @@
 
 <body>
     <header>
-       <h1>Alquimia Sonora</h1>
+       <h1>Universo Musical</h1>
     </header>
     <main>
         <section>
-        <input type="text" placeholder="Digite o nome do time">
+        <input type="text" placeholder="Digite o nome da musica ou album" id="campo-pesquisa">
         <button onclick="pesquisar()">Pesquisar</button>
     </section>
     <section class="resultados-pesquisa" id="resultados-pesquisa">
@@ -60,7 +60,21 @@
          </div> -->
     </section>
     </main>
+
+    <footer>
+        <p>&copy; 2024 Site criado por Neto.</p>
+        <p>Contato: discord > ineto_o</p>
+    </footer>
+
     <script src="dados.js"></script>
     <script src="app.js"></script>
+    <style>
+        .nao-encontrado {
+          color: rgb(5, 5, 5);
+          background-color: rgb(253, 251, 251);
+          padding: 10px;
+          border-radius: 5px;
+        }
+      </style>
 </body>
 </html>
