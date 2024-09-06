@@ -3,7 +3,7 @@
 
 /* Estiliza o corpo da página */
 body {
-    font-family: "Safari", sans-serif; /* Define a fonte padrão */
+    font-family: "Opera 3", sans-serif; /* Define a fonte padrão */
     background-color: #DDDDDD; /* Cor de fundo da página */
     background-image: url('https://img.freepik.com/fotos-gratis/fundo-musical-volumetrico-com-uma-clave-de-sol-e-ia-geradora-de-notas_169016-29576.jpg?w=1060&t=st=1725471592~exp=1725472192~hmac=6db3cc1efd2859188a7bb39a4ba2dbd7d9727fd494c300dd3ad25107d2468b24'); /* Adiciona a imagem de fundo */
     background-size: cover; /* Ajusta o tamanho da imagem para cobrir toda a área do fundo */
@@ -17,13 +17,23 @@ body {
     margin: 0; /* Remove a margem padrão */
     padding: 0; /* Remove o padding padrão */
 }
-
 /* Estiliza os títulos h1 */
 h1 {
+    background: rgba(255, 255, 255, 0); /* Fundo totalmente transparente */
+    padding: 1.5rem 3rem; /* Espaçamento interno da caixa */
+    border-radius: 1rem; /* Borda arredondada */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra ao redor da caixa, opcional */
+    color: #faf9f7; /* Cor do texto */
     font-size: 3.5rem; /* Tamanho da fonte */
-    color: #dd8015; /* Cor do texto */
     text-align: center; /* Alinha o texto ao centro */
     letter-spacing: 0.4rem; /* Espaçamento entre letras */
+    margin-bottom: 2rem; /* Espaçamento abaixo da caixa */
+    position: relative; /* Permite o posicionamento relativo dos elementos internos */
+    z-index: 1; /* Garante que o texto esteja acima de outros elementos */
+    text-shadow: 2px 2px 0 #000000, /* Borda preta ao redor do texto */
+                 -2px -2px 0 #000000,
+                 2px -2px 0 #000000,
+                 -2px 2px 0 #000000; /* Cria um efeito de borda mais espesso */
 }
 
 /* Estiliza as seções da página */
@@ -71,15 +81,17 @@ section button:hover {
     margin-top: 1rem; /* Espaçamento acima da caixa de resultados */
     padding: 1rem; /* Espaçamento interno */
     border-radius: 0.6rem; /* Borda arredondada */
+    text-align: center;
 }
+
 
 /* Estiliza cada item de resultado */
 .item-resultado {
     background: #FFFFFF; /* Cor de fundo dos itens */
-    border-radius: 0.6rem; /* Borda arredondada */
+    border-radius: .6rem; /* Borda arredondada */
     padding: 1rem; /* Espaçamento interno */
     margin-bottom: 1rem; /* Espaçamento abaixo dos itens */
-    box-shadow: 0 2px 4px rgba(247, 244, 244, 0.1); /* Sombra leve */
+    box-shadow: 0 4px 4px rgba(247, 244, 244, 0.1); /* Sombra leve */
 }
 
 /* Estiliza os títulos dentro dos itens de resultado */
@@ -107,8 +119,8 @@ section button:hover {
 
 /* Estiliza o rodapé da página */
 footer {
-    background-color: #F5F7F8; /* Cor de fundo do rodapé */
-    color: #45474B; /* Cor do texto */
+    background-color: #0a0a0a; /* Cor de fundo do rodapé */
+    color: #f7f3f3; /* Cor do texto */
     text-align: center; /* Alinha o texto ao centro */
     padding: 0; /* Espaçamento interno */
     width: 100%; /* Largura total da página */
@@ -134,9 +146,20 @@ footer {
     }
 
     .item-resultado h2 {
-        font-size: 1.3rem; /* Tamanho da fonte dos títulos em telas menores */
+        font-size: 2.3rem; /* Tamanho da fonte dos títulos em telas menores */
+    
     }
+
+    .nao-encontrado {
+        color: white;
+        background-color: black;
+        padding: 10px;
+        border-radius: 5px;
+      }
+    
 }
+
+
 
 /* Responsividade para celulares */
 @media (max-width: 480px) {
