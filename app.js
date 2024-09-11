@@ -7,7 +7,7 @@ function pesquisar() {
     return;
   }
 
-  const resultados = dados.filter(dado => {
+    const resultados = dados.filter(dado => {
     const tituloLower = dado.titulo.toLowerCase();
     const descriçãoLower = dado.descrição.toLowerCase();
     const tagsLower = dado.tags.toLowerCase();
@@ -22,10 +22,9 @@ function pesquisar() {
     resultados.forEach(dado => {
       html += `
         <div class="item-resultado">
-          <h2>
-            <a href="${dado.link}" target="_blank">${dado.titulo.replace(new RegExp(campoPesquisa, "gi"), match => `<strong>${match}</strong>`)}</a>
-          </h2>
-          <p>${dado.descrição}</p>
+        <h2>${dado.titulo}</h2>
+        <p>${dado.descrição}</p>
+        <button class="btn-escutar" onclick="window.open('${dado.link}', '_blank')">Escute aqui</button>
         </div>
       `;
     });
