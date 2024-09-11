@@ -5,7 +5,7 @@
 body {
     font-family: "Opera 3", sans-serif; /* Define a fonte padrão */
     background-color: #DDDDDD; /* Cor de fundo da página */
-    background-image: url('https://img.freepik.com/fotos-gratis/fundo-musical-volumetrico-com-uma-clave-de-sol-e-ia-geradora-de-notas_169016-29576.jpg?w=1060&t=st=1725471592~exp=1725472192~hmac=6db3cc1efd2859188a7bb39a4ba2dbd7d9727fd494c300dd3ad25107d2468b24'); /* Adiciona a imagem de fundo */
+    background-image: url('Musicasite.jpg'); /* Adiciona a imagem de fundo */
     background-size: cover; /* Ajusta o tamanho da imagem para cobrir toda a área do fundo */
     background-position: center; /* Centraliza a imagem de fundo */
     background-repeat: no-repeat; /* Evita que a imagem se repita */
@@ -19,10 +19,10 @@ body {
 }
 /* Estiliza os títulos h1 */
 h1 {
-    background: rgba(255, 255, 255, 0); /* Fundo totalmente transparente */
-    padding: 1.5rem 3rem; /* Espaçamento interno da caixa */
-    border-radius: 1rem; /* Borda arredondada */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra ao redor da caixa, opcional */
+    /*background: rgba(255, 255, 255, 0); /* Fundo totalmente transparente */
+    /*padding: 1.5rem 3rem; /* Espaçamento interno da caixa */
+    /*border-radius: 1rem; /* Borda arredondada */
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra ao redor da caixa, opcional */
     color: #faf9f7; /* Cor do texto */
     font-size: 3.5rem; /* Tamanho da fonte */
     text-align: center; /* Alinha o texto ao centro */
@@ -119,7 +119,7 @@ section button:hover {
 
 /* Estiliza o rodapé da página */
 footer {
-    background-color: #0a0a0a; /* Cor de fundo do rodapé */
+    background-color: #0a0a0abd; /* Cor de fundo do rodapé */
     color: #f7f3f3; /* Cor do texto */
     text-align: center; /* Alinha o texto ao centro */
     padding: 0; /* Espaçamento interno */
@@ -127,7 +127,17 @@ footer {
     position: absolute; /* Posiciona o rodapé */
     bottom: 0; /* Alinha ao fundo da página */
     font-size: 1rem; /* Tamanho da fonte */
+    
 }
+
+  .social-icons a {
+    color: #f7f1f1;
+    font-size: 30px; /* Ajuste o tamanho aqui */
+    margin: 0 10px;
+  }
+  .social-icons a:hover {
+    color: #007bff;
+  }
 
 @media (max-width: 768px) {
     h1 {
@@ -158,8 +168,6 @@ footer {
       }
     
 }
-
-
 
 /* Responsividade para celulares */
 @media (max-width: 480px) {
